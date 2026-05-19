@@ -27,7 +27,7 @@ public class TaskController {
         this.taskService = taskService;
     }
 
-    //create task
+
     @PostMapping
     @Operation(
             summary = "Create a new Task",
@@ -41,7 +41,7 @@ public class TaskController {
         return new ResponseEntity<>(createdTask, HttpStatus.CREATED);
     }
 
-    //get task
+
     @GetMapping
     @Operation(
             summary = "Get all Tasks (with Pagination and Filter)",
@@ -68,7 +68,6 @@ public class TaskController {
         return ResponseEntity.ok(tasks);
     }
 
-    //get task by id
     @GetMapping("/{id}")
     @Operation(
             summary = "Get Task by ID",
@@ -83,7 +82,6 @@ public class TaskController {
         return ResponseEntity.ok(task);
     }
 
-    //update task
     @PutMapping("/{id}")
     @Operation(
             summary = "Update an existing Task",
@@ -100,7 +98,7 @@ public class TaskController {
         return ResponseEntity.ok(updatedTask);
     }
 
-    //delete task
+
     @DeleteMapping("/{id}")
     @Operation(
             summary = "Delete Task by ID",

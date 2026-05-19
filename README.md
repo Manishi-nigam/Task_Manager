@@ -66,10 +66,8 @@ com.taskmanager
 Follow these steps to set up your PostgreSQL database before running the application:
 
 1. **Database Schema Execution**:
-   A clean, professional database initialization script is provided in [schema.sql](src/main/resources/schema.sql). 
    * Connect to your PostgreSQL server using your database client (such as pgAdmin or psql CLI).
-   * Open a query tool against the default `postgres` database.
-   * Run the SQL query from the schema file to create the new database:
+   * Run the following command to create the new database:
      ```sql
      CREATE DATABASE task_management_db;
      ```
@@ -77,11 +75,10 @@ Follow these steps to set up your PostgreSQL database before running the applica
 2. **Update Database Credentials**:
    Open [application.properties](src/main/resources/application.properties) and update the datasource details with your local PostgreSQL credentials:
    ```properties
-   spring.datasource.url=jdbc:postgresql://localhost:5432/task_management_db
-   spring.datasource.username=YOUR_POSTGRES_USERNAME
-   spring.datasource.password=YOUR_POSTGRES_PASSWORD
+   spring.datasource.url=jdbc:postgresql://localhost:5432/task_management
+   spring.datasource.username=your_username
+   spring.datasource.password=your_password
    ```
-   *(Note: Since `spring.jpa.hibernate.ddl-auto` is set to `update` in the application configuration, Hibernate will automatically handle table creation on application startup once connected.)*
 
 ### 2. Build the Application
 Navigate to the root directory where `pom.xml` is present and execute:
@@ -269,6 +266,6 @@ The application will start on port `8080`.
 ## 🔍 Interactive API Documentation (Swagger)
 
 Once the application is running, open your web browser and navigate to:
-👉 **[http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)**
+👉 **[http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)**
 
 You can view fully formatted API definitions, schemas, and perform interactive requests against all endpoints right from the UI!
